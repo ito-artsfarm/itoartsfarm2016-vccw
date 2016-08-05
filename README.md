@@ -30,6 +30,8 @@ $ vagrant up
 
 http://192.168.33.10/
 
+WordPressのソースコードは `www/wordpress/` 配下にあります。
+
 ## 設定情報
 
 ### 管理画面
