@@ -3,7 +3,7 @@
 
 require 'yaml'
 
-Vagrant.require_version '>= 1.8'
+Vagrant.require_version '>= 1.7'
 
 Vagrant.configure(2) do |config|
 
