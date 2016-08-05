@@ -36,6 +36,6 @@ http://192.168.33.10/
 
 開発環境の管理画面には以下のアカパスでログインできます。
 
-Username: admin
+Username: admin  
 Password: admin
 
