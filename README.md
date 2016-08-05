@@ -1,42 +1,31 @@
-# VCCW
+# itoartsfarm2016-vccw
 
-This is a Vagrant configuration designed for development of WordPress plugins, themes, or websites.
+itoartsfarmのローカル開発環境です。
 
-To get started, check out <http://vccw.cc/>
+## 環境構築
 
-## Configuration
+VirtualBox、Vagrantのインストールが必要なので事前にインストールしてください。
 
-1. Copy `provision/default.yml` to `site.yml`.
-1. Edit the `site.yml`.
-1. Run `vagrant up`.
+### 1. Install VirtualBox.
+https://www.virtualbox.org/
 
-### Note
+### 2. Install Vagrant.
+http://www.vagrantup.com/
 
-* The `site.yml` has to be in the same directory with Vagrantfile.
-* You can put just difference to the `site.yml`.
-
-## Contribute
-
-### Setting up
-
-1. Clone this git repository on your local machine.
-2. Run `bundle install` to fetch all dependencies.
-
-### Running and writing tests
-
-There is automated tests using [Serverspec](http://serverspec.org/).
-
-The tests files are in the `spec/` directory.
-
-
-Before running the serverspec tests, you'll need some dependencies.
+以下のコマンドでイメージをダウンロードします。
 
 ```
-$ bundle install --path=vendor/bundle
+$ vagrant box add miya0001/vccw
 ```
 
-Then to run the tests, just execute following.
+### 起動コマンド
 
 ```
-$ bundle exec rake spec
+$ git clone https://github.com/ito-artsfarm/itoartsfarm2016-vccw.git
+$ cd itoartsfarm2016-vccw
+$ vagrant up
 ```
+
+起動したら以下のURLで参照できます。
+
+http://192.168.33.10/
