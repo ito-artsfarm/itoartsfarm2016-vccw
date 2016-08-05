@@ -18,7 +18,7 @@ http://www.vagrantup.com/
 $ vagrant box add miya0001/vccw
 ```
 
-### 起動コマンド
+## 開発環境の起動
 
 ```
 $ git clone https://github.com/ito-artsfarm/itoartsfarm2016-vccw.git
@@ -29,3 +29,13 @@ $ vagrant up
 起動したら以下のURLで参照できます。
 
 http://192.168.33.10/
+
+## 設定情報
+
+### 管理画面
+
+開発環境の管理画面には以下のアカパスでログインできます。
+
+Username: admin
+Password: admin
+
