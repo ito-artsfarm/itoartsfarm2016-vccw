@@ -18,7 +18,7 @@ http://www.vagrantup.com/
 $ vagrant box add miya0001/vccw
 ```
 
-## 開発環境の起動
+## インストール
 
 ```
 $ git clone https://github.com/ito-artsfarm/itoartsfarm2016-vccw.git
@@ -37,6 +37,16 @@ http://192.168.33.10/
 http://192.168.33.10/wp-admin
 
 `itoartsfarm2016-wp` ファイルを編集してテーマを編集できます。
+編集すると開発環境でリアルタイムに確認ができます。
+
+## 開発環境の起動
+
+1度インストールを行えば、次回からは以下のコマンドで環境を起動できます。
+
+```
+$ cd itoartsfarm2016-vccw
+$ vagrant up
+```
 
 ## 設定情報
 
