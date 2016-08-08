@@ -22,6 +22,7 @@ $ vagrant box add miya0001/vccw
 
 ```
 $ git clone https://github.com/ito-artsfarm/itoartsfarm2016-vccw.git
+$ git clone https://github.com/ito-artsfarm/itoartsfarm2016-wp
 $ cd itoartsfarm2016-vccw
 $ vagrant up
 ```
@@ -30,7 +31,12 @@ $ vagrant up
 
 http://192.168.33.10/
 
-WordPressのソースコードは `www/wordpress/` 配下にあります。
+管理画面にアクセスして`itoartsfarm2016-wp`のテーマを設定してください。
+`admin, admin` でログインできます。
+
+http://192.168.33.10/wp-admin
+
+`itoartsfarm2016-wp` ファイルを編集してテーマを編集できます。
 
 ## 設定情報
 

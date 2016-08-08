@@ -18,7 +18,7 @@ cpus: 1
 #
 hostname: vccw.dev
 ip: 192.168.33.10
-sync_folder: 'www/wordpress'
+sync_folder: '../itoartsfarm2016-wp'
 
 #
 # WordPress Settings

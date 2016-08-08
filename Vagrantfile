@@ -57,7 +57,7 @@ Vagrant.configure(2) do |config|
   config.vm.network :private_network, ip: _conf['ip']
 
   # config.vm.synced_folder ".", "/vagrant", :mount_options => ['dmode=755', 'fmode=644']
-  config.vm.synced_folder _conf['sync_folder'], _conf['document_root'], :create => "true", :mount_options => ['dmode=755', 'fmode=644'] 
+  config.vm.synced_folder _conf['sync_folder'], '/var/www/wordpress/wp-content/themes/itoartsfarm2016-wp', :mount_options => ['dmode=755', 'fmode=644'] # config.vm.synced_folder 'itoartsfarm2016-wp', '/var/www/wordpress/wp-content/themes/itoartsfarm2016-wp'
 
   if Vagrant.has_plugin?('vagrant-hostsupdater')
     config.hostsupdater.remove_on_suspend = true
@@ -87,6 +87,9 @@ Vagrant.configure(2) do |config|
   if File.exists?(File.join(File.dirname(__FILE__), 'provision-pre.sh')) then
     config.vm.provision :shell, :path => File.join( File.dirname(__FILE__), 'provision-pre.sh' )
   end
+
+  ## Git clone when repository empty
+  # config.vm.provision :shell, inline: "test ! -d /var/www/wordpress/wp-content/themes/itoartsfarm2016-wp && git clone https://github.com/ito-artsfarm/itoartsfarm2016-wp.git /var/www/wordpress/wp-content/themes/itoartsfarm2016-wp"
 
   config.vm.provision :chef_solo do |chef|
 
