@@ -56,8 +56,9 @@ Vagrant.configure(2) do |config|
   config.vm.hostname = _conf['hostname']
   config.vm.network :private_network, ip: _conf['ip']
 
-  # config.vm.synced_folder ".", "/vagrant", :mount_options => ['dmode=755', 'fmode=644']
-  config.vm.synced_folder _conf['sync_folder'], '/var/www/wordpress/wp-content/themes/itoartsfarm2016-wp', :mount_options => ['dmode=755', 'fmode=644'] # config.vm.synced_folder 'itoartsfarm2016-wp', '/var/www/wordpress/wp-content/themes/itoartsfarm2016-wp'
+   config.vm.synced_folder _conf['sync_folder'], "/vagrant", :mount_options => ['dmode=755', 'fmode=644']
+   # config.vm.synced_folder ".", "/vagrant", :mount_options => ['dmode=755', 'fmode=644']
+  # config.vm.synced_folder _conf['sync_folder'], '/var/www/wordpress/wp-content/themes/itoartsfarm2016-wp', :mount_options => ['dmode=755', 'fmode=644'] # config.vm.synced_folder 'itoartsfarm2016-wp', '/var/www/wordpress/wp-content/themes/itoartsfarm2016-wp'
 
   if Vagrant.has_plugin?('vagrant-hostsupdater')
     config.hostsupdater.remove_on_suspend = true
@@ -203,4 +204,6 @@ Vagrant.configure(2) do |config|
   if File.exists?(File.join(File.dirname(__FILE__), 'provision-post.sh')) then
     config.vm.provision :shell, :path => File.join( File.dirname(__FILE__), 'provision-post.sh' )
   end
+
+  config.vm.provision :shell, inline: "ln -s /vagrant /var/www/wordpress/wp-content/themes/itoartsfarm2016-wp"
 end
